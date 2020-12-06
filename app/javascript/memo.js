@@ -1,10 +1,15 @@
 function memo() {
   const submit = document.getElementById("submit");
   submit.addEventListener("click", (e) => {
+    //フォームの情報を取得し、Ajaxで送信できる形へと整形
     const formData = new FormData(document.getElementById("form"));
+    //Ajaxに利用するオブジェクトを生成
     const XHR = new XMLHttpRequest();
+    //Ajaxに関する情報を初期化し、エンドポイントなどを設定
     XHR.open("POST", "/posts", true);
+    //レスポンスとして求めるデータ形式を指定
     XHR.responseType = "json";
+    //Ajaxで送信
     XHR.send(formData);
     XHR.onload = () => {
       if (XHR.status != 200) {
