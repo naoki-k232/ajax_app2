@@ -24,7 +24,7 @@ function check() {
           // レスポンスの HTTP ステータスを解析し、該当するエラーメッセージをアラートで表示するようにしている
           alert(`Error ${XHR.status}: ${XHR.statusText}`);
           // 処理を終了している
-          return null;          
+          return null;
         }
         // レスポンスされたデータを変数itemに代入している
         const item = XHR.response.post;
